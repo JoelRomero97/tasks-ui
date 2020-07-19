@@ -11,7 +11,6 @@ void main() {
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(create: (_) => new DataModel()),
-      ChangeNotifierProvider(create: (_) => new TaskModel()),
       ChangeNotifierProvider(create: (_) => new FiltersModel()),
     ],
     child: MyApp(),
