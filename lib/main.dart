@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:tasks_ui/src/models/data_model.dart';
 import 'package:tasks_ui/src/models/task_model.dart';
 import 'package:tasks_ui/src/pages/my_list_page.dart';
+import 'package:tasks_ui/src/pages/schedule_page.dart';
 import 'package:tasks_ui/src/models/filters_model.dart';
 
 void main() {
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
       initialRoute: 'my-list',
       routes: {
         'my-list': (BuildContext context) => MyListPage(),
+        'schedule': (BuildContext context) => SchedulePage(),
       },
     );
   }

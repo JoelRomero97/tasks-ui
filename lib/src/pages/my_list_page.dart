@@ -12,7 +12,7 @@ class MyListPage extends StatelessWidget {
     return GenericPage(
       title: 'MY LIST',
       subHeader: _buildDayFilter(),
-      rightIcon: Icon(Icons.calendar_today, color: Colors.white),
+      rightIcon: Icon(Icons.more_horiz, color: Colors.white),
       customChild: Container(
         width: double.infinity,
         height: double.infinity,
