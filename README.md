@@ -2,6 +2,15 @@
 
 UI challenge for a tasks app
 
+## Screenshots ##
+
+![July 16 My List](https://raw.githubusercontent.com/JoelRomero97/tasks-ui/master/assets/screenshots/16-jul-my-list.png)
+![July 16 Schedule](https://raw.githubusercontent.com/JoelRomero97/tasks-ui/master/assets/screenshots/16-jul-schedule.png)
+![July 19 My List](https://raw.githubusercontent.com/JoelRomero97/tasks-ui/master/assets/screenshots/19-jul-my-list.png)
+![July 19 Schedule](https://raw.githubusercontent.com/JoelRomero97/tasks-ui/master/assets/screenshots/19-jul-schedule.png)
+![July 22 My List](https://raw.githubusercontent.com/JoelRomero97/tasks-ui/master/assets/screenshots/22-jul-my-list.png)
+![July 22 Schedule](https://raw.githubusercontent.com/JoelRomero97/tasks-ui/master/assets/screenshots/22-jul-schedule.png)
+
 ## Info ##
 
 This project uses:
@@ -30,6 +39,8 @@ To start the application:
 ```
 flutter run
 ```
+
+Feel free to change tasks on `assets/tasks.json`, the app will automatically change the days for the current week.
 
 To build project for production purpose:
 
