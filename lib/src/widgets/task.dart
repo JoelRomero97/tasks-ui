@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'package:tasks_ui/src/utils/helpers.dart';
 import 'package:tasks_ui/src/models/task_model.dart';
 
 class Task extends StatelessWidget {
@@ -9,6 +10,7 @@ class Task extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final now = DateTime.now();
     return Align(
       alignment: Alignment.centerRight,
       child: Container(
@@ -31,7 +33,7 @@ class Task extends StatelessWidget {
                 Container(
                   width: MediaQuery.of(context).size.width * 0.52,
                   child: Text(
-                    task.title + task.title,
+                    task.title,
                     style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.w600,
@@ -39,10 +41,32 @@ class Task extends StatelessWidget {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.only(right: 10),
-                  child: Icon(Icons.check, color: Color(0xFF4042C9), size: 20),
-                ),
+                if (task.date.isBefore(now))
+                  Padding(
+                    padding: EdgeInsets.only(right: 10),
+                    child: Icon(
+                        task.date.hour == now.hour && isSameDay(task.date, now)
+                            ? Icons.notifications_active
+                            : Icons.check,
+                        color: Color(task.date.hour == now.hour &&
+                                task.date.day == now.day
+                            ? 0xFF4042C9
+                            : 0xFFA2A2A2),
+                        size: 20),
+                  ),
+                if (task.date.isAfter(now))
+                  Padding(
+                    padding: EdgeInsets.only(right: 10),
+                    child: Icon(
+                        task.date.hour == now.hour && isSameDay(task.date, now)
+                            ? Icons.notifications_active
+                            : Icons.notifications_none,
+                        color: Color(task.date.hour == now.hour &&
+                                task.date.day == now.day
+                            ? 0xFF4042C9
+                            : 0xFFA2A2A2),
+                        size: 20),
+                  ),
               ],
             ),
             SizedBox(height: 10),
@@ -56,7 +80,7 @@ class Task extends StatelessWidget {
                   child: Text(
                     task.description,
                     style: TextStyle(
-                      color: Color(0xFFB1B5B8),
+                      color: Color(0xFF47525E),
                       fontWeight: FontWeight.w200,
                       fontSize: 12,
                     ),
@@ -65,7 +89,7 @@ class Task extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.only(right: 10),
                   child: Icon(Icons.more_horiz,
-                      color: Color(0xFFB1B5B8), size: 20),
+                      color: Color(0xFF47525E), size: 20),
                 ),
               ],
             ),

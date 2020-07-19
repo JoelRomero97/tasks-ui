@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import 'package:tasks_ui/src/models/filters_model.dart';
 
 class TaskTypeCard extends StatelessWidget {
   final int tasks;
@@ -14,8 +17,12 @@ class TaskTypeCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _size = MediaQuery.of(context).size;
+    final filtersModel = Provider.of<FiltersModel>(context);
     return RawMaterialButton(
-      onPressed: () => Navigator.pushNamed(context, 'schedule'),
+      onPressed: () {
+        filtersModel.type = title.toLowerCase();
+        Navigator.pushNamed(context, 'schedule');
+      },
       child: Container(
         width: _size.width * 0.4,
         height: _size.height * 0.25,

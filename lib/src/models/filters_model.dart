@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class FiltersModel with ChangeNotifier {
-  String _type = 'all';
+  String _type = 'all tasks';
   DateTime _date = DateTime.now();
 
   String get type => this._type;
